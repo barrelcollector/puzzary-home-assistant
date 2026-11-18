@@ -1,0 +1,11 @@
+{
+  "domain": "puzzary",
+  "name": "Puzzary",
+  "codeowners": ["@barrelcollector"],
+  "config_flow": true,
+  "dependencies": ["http", "media_source"],
+  "documentation": "https://github.com/barrelcollector/puzzary-home-assistant",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "version": "0.2.0"
+}

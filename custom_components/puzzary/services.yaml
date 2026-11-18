@@ -1,0 +1,86 @@
+refresh:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: puzzary
+
+generate_puzzle:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: puzzary
+    puzzle_type:
+      required: true
+      example: word_search
+      selector:
+        text:
+    theme:
+      default: general
+      selector:
+        text:
+    difficulty:
+      default: easy
+      selector:
+        text:
+    word_bank_slugs:
+      default: []
+      selector:
+        object:
+    seed:
+      selector:
+        text:
+    completion_message:
+      selector:
+        text:
+          multiline: true
+    visibility:
+      default: public
+      selector:
+        select:
+          options:
+            - public
+            - unlisted
+    generation_options:
+      default: {}
+      selector:
+        object:
+
+publish_puzzle:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: puzzary
+    puzzle_id:
+      required: true
+      selector:
+        text:
+
+archive_puzzle:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: puzzary
+    puzzle_id:
+      required: true
+      selector:
+        text:
+
+unarchive_puzzle:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: puzzary
+    puzzle_id:
+      required: true
+      selector:
+        text:

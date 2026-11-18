@@ -1,0 +1,9 @@
+{
+  "services": {
+    "refresh": {"service": "mdi:refresh"},
+    "generate_puzzle": {"service": "mdi:puzzle-plus"},
+    "publish_puzzle": {"service": "mdi:publish"},
+    "archive_puzzle": {"service": "mdi:archive-arrow-down"},
+    "unarchive_puzzle": {"service": "mdi:archive-arrow-up"}
+  }
+}

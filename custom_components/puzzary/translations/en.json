@@ -1,0 +1,81 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Puzzary",
+        "description": "Use an API token issued from Puzzary's user administration page.",
+        "data": {"base_url": "Puzzary URL", "api_token": "API token"},
+        "data_description": {
+          "base_url": "The URL Home Assistant uses to reach Puzzary.",
+          "api_token": "A Puzzary API token with API access. Management actions require the corresponding puzzle permissions."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to Puzzary",
+      "invalid_auth": "The API token was not accepted",
+      "invalid_url": "Enter a complete http or https URL",
+      "unknown": "Unexpected error"
+    },
+    "abort": {"already_configured": "This Puzzary account is already configured"}
+  },
+  "entity": {
+    "sensor": {
+      "played": {"name": "Puzzles played"},
+      "completed": {"name": "Puzzles completed"},
+      "in_progress": {"name": "Puzzles in progress"},
+      "attempts": {"name": "Attempts"},
+      "correct_attempts": {"name": "Correct attempts"},
+      "latest_puzzle": {"name": "Latest printable puzzle"}
+    },
+    "image": {"latest_puzzle": {"name": "Latest printable puzzle"}}
+  },
+  "services": {
+    "refresh": {
+      "name": "Refresh Puzzary",
+      "description": "Refresh statistics and the latest printable puzzle.",
+      "fields": {
+        "config_entry_id": {"name": "Puzzary connection", "description": "The Puzzary configuration entry to refresh."}
+      }
+    },
+    "generate_puzzle": {
+      "name": "Generate puzzle",
+      "description": "Generate a puzzle using the connected Puzzary server.",
+      "fields": {
+        "config_entry_id": {"name": "Puzzary connection", "description": "The Puzzary configuration entry to use."},
+        "puzzle_type": {"name": "Puzzle type", "description": "The Puzzary puzzle type slug."},
+        "theme": {"name": "Theme", "description": "The theme or fallback word-bank slug."},
+        "difficulty": {"name": "Difficulty", "description": "The generator difficulty."},
+        "word_bank_slugs": {"name": "Word banks", "description": "A list of word-bank slugs."},
+        "seed": {"name": "Seed", "description": "An optional repeatable generation seed."},
+        "completion_message": {"name": "Completion message", "description": "Message shown after the puzzle is completed."},
+        "visibility": {"name": "Visibility", "description": "Whether the generated puzzle is public or unlisted."},
+        "generation_options": {"name": "Generation options", "description": "Puzzle-type-specific options as an object."}
+      }
+    },
+    "publish_puzzle": {
+      "name": "Publish puzzle",
+      "description": "Publish a draft or scheduled puzzle immediately.",
+      "fields": {
+        "config_entry_id": {"name": "Puzzary connection", "description": "The Puzzary configuration entry to use."},
+        "puzzle_id": {"name": "Puzzle ID", "description": "The puzzle to publish."}
+      }
+    },
+    "archive_puzzle": {
+      "name": "Archive puzzle",
+      "description": "Remove a puzzle from the active library without deleting it.",
+      "fields": {
+        "config_entry_id": {"name": "Puzzary connection", "description": "The Puzzary configuration entry to use."},
+        "puzzle_id": {"name": "Puzzle ID", "description": "The puzzle to archive."}
+      }
+    },
+    "unarchive_puzzle": {
+      "name": "Restore puzzle",
+      "description": "Restore an archived puzzle to the active library.",
+      "fields": {
+        "config_entry_id": {"name": "Puzzary connection", "description": "The Puzzary configuration entry to use."},
+        "puzzle_id": {"name": "Puzzle ID", "description": "The puzzle to restore."}
+      }
+    }
+  }
+}
