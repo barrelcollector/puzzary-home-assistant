@@ -11,13 +11,19 @@ ROOT = Path(__file__).resolve().parents[1]
 COMPONENT = ROOT / "custom_components" / "puzzary"
 DIST = ROOT / "dist"
 FIXED_ZIP_TIME = (2026, 1, 1, 0, 0, 0)
+TEXT_SUFFIXES = {"", ".json", ".md", ".py", ".txt", ".yaml", ".yml"}
+
+
+def normalized_bytes(source: Path) -> bytes:
+    data = source.read_bytes()
+    return data.replace(b"\r\n", b"\n") if source.suffix.lower() in TEXT_SUFFIXES else data
 
 
 def add_file(bundle: zipfile.ZipFile, archive_name: str, source: Path) -> None:
     entry = zipfile.ZipInfo(archive_name, FIXED_ZIP_TIME)
     entry.compress_type = zipfile.ZIP_DEFLATED
     entry.external_attr = 0o100644 << 16
-    bundle.writestr(entry, source.read_bytes())
+    bundle.writestr(entry, normalized_bytes(source))
 
 
 def main() -> None:
