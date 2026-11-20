@@ -19,7 +19,12 @@ assert manifest["domain"] == "puzzary"
 assert manifest["config_flow"] is True
 assert manifest["documentation"] == "https://github.com/barrelcollector/puzzary-home-assistant"
 assert manifest["dependencies"] == ["http", "media_source"]
+assert manifest["version"] == "0.2.1"
 assert (ROOT / "hacs.json").is_file()
+assert "Apache License" in (ROOT / "LICENSE").read_text(encoding="utf-8")
+assert "Puzzary contributors" in (ROOT / "NOTICE").read_text(encoding="utf-8")
+assert (ROOT / "CONTRIBUTING.md").is_file()
+assert (ROOT / "SECURITY.md").is_file()
 
 required = (
     "__init__.py", "api.py", "config_flow.py", "coordinator.py", "entity.py",
