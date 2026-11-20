@@ -7,5 +7,5 @@
   "documentation": "https://github.com/barrelcollector/puzzary-home-assistant",
   "integration_type": "service",
   "iot_class": "local_polling",
-  "version": "0.2.0"
+  "version": "0.2.1"
 }

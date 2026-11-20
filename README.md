@@ -40,3 +40,22 @@ then restart Home Assistant. To remove the integration, delete its entry from
 **Settings -> Devices & services**, remove the folder if installed manually, and
 restart Home Assistant.
 
+## Compatibility and distribution
+
+Version 0.2.1 supports the Puzzary 0.1.0 public beta API and Home Assistant
+2025.1 or newer. Puzzary must be reachable from Home Assistant over HTTP or
+HTTPS, and the configured Puzzary account must have API access plus any
+permissions required by the enabled actions.
+
+The supported public-beta installation paths are a HACS custom repository and
+manual installation. Submission to the default HACS repository is not part of
+the first public beta and can be considered after the integration has broader
+real-world testing.
+
+## License
+
+Puzzary for Home Assistant is licensed under the
+[Apache License 2.0](LICENSE). Copyright 2026 Puzzary contributors. See
+[NOTICE](NOTICE) for attribution. Home Assistant and its trademarks belong to
+their respective owners; this is an independent integration.
+
