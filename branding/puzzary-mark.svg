@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Puzzary</title>
+  <desc id="desc">A maze-like letter P with start and finish markers.</desc>
+  <rect width="512" height="512" rx="112" fill="#0d3b36"/>
+  <path d="M158 404V120h128c78 0 120 40 120 100s-42 100-120 100h-66"
+        fill="none" stroke="#f7f3e8" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="158" cy="404" r="23" fill="#63d5c3"/>
+  <path d="m220 291 29 29-29 29-29-29z" fill="#63d5c3"/>
+</svg>

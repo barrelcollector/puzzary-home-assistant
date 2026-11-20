@@ -42,7 +42,7 @@ restart Home Assistant.
 
 ## Compatibility and distribution
 
-Version 0.2.1 supports the Puzzary 0.1.0 public beta API and Home Assistant
+Version 0.2.2 supports the Puzzary 0.1.0 public beta API and Home Assistant
 2025.1 or newer. Puzzary must be reachable from Home Assistant over HTTP or
 HTTPS, and the configured Puzzary account must have API access plus any
 permissions required by the enabled actions.
@@ -51,6 +51,19 @@ The supported public-beta installation paths are a HACS custom repository and
 manual installation. Submission to the default HACS repository is not part of
 the first public beta and can be considered after the integration has broader
 real-world testing.
+
+## Branding
+
+Puzzary's icon is bundled in the integration's `brand` directory for Home
+Assistant 2026.3 and newer and for compatible HACS marketplace surfaces. The
+same high-contrast mark is used by Puzzary core and remains legible on light and
+dark themes. Home Assistant versions before local custom-integration branding
+support continue to use their normal placeholder behavior.
+
+The editable SVG master, palette, rationale, and reproducible export steps are
+in [`branding/`](branding/README.md). This integration does not expose a
+standalone web interface, so it does not include unused favicon or web-manifest
+assets.
 
 ## License
 
